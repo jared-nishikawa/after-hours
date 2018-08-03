@@ -80,10 +80,10 @@ mapped = map(squared, nums) # note how parentheses are not necessary when sendin
 
 for num in mapped:
     print(num)
-> 0
-> 1
-> 4
-> 9
+# 0
+# 1
+# 4
+# 9
 ```
 
 ## Lambdas
@@ -103,10 +103,10 @@ mapped = map(lambda x: x**2, nums)
 
 for num in mapped:
     print(num)
-> 0
-> 1
-> 4
-> 9
+# 0
+# 1
+# 4
+# 9
 ```
 
 **TODO**: cross-reference with class attributes
@@ -129,15 +129,15 @@ def show_location(city, country, planet="Earth"):
 
 # See, you don't need to specify planet here
 show_location("Boulder", "USA")
-> City: Boulder
-> Country: USA
-> Planet: Earth
+# City: Boulder
+# Country: USA
+# Planet: Earth
 
 # But if you do want to change the planet parameter, you can!
 show_location("Olympus Mons", "Amazonis", planet="Mars")
-> City: Olympus Mons
-> Country: Amazonis
-> Planet: Mars
+# City: Olympus Mons
+# Country: Amazonis
+# Planet: Mars
 ```
 
 ## Args and Kwargs
@@ -179,9 +179,9 @@ def display(somelist):
         print(item)
 
 display(["Hello world!", "The weather is great!", "Mind the gap."])
-> Hello world!
-> The weather is great!
-> Mind the gap.
+# Hello world!
+# The weather is great!
+# Mind the gap.
 ```
 
 That's all well and good, but `print` is clearly taking *several* arguments, separated by commas, whereas this `display` function we just wrote takes a *single* argument which is a list.
@@ -197,9 +197,9 @@ def display(*args):
         print(item)
 
 display("Hello world!", "The weather is great!", "Mind the gap.")
-> Hello world!
-> The weather is great!
-> Mind the gap.
+# Hello world!
+# The weather is great!
+# Mind the gap.
 ```
 
 Amazing!
@@ -220,14 +220,14 @@ def display(*args, **kwargs):
         print(key, kwargs[key])
 
 display("Hello!", "World!", "Weather!", secret="Mind", msg="Gap")
-> Args:
-> Hello!
-> World!
-> Weather!
->
-> Kwargs:
-> secret Mind
-> msg Gap
+# Args:
+# Hello!
+# World!
+# Weather!
+#
+# Kwargs:
+# secret Mind
+# msg Gap
 ```
 
 So it turns out that `*args` and `**kwargs` are special types of references that turn your function parameters into a list and a dictionary, respectively.
