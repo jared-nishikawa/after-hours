@@ -1,6 +1,6 @@
 # Functions
 
-## Basics
+## [Basics](./basics)
 
 ## Wrappers and Decorators
 
