@@ -81,7 +81,7 @@ A couple of notes about the previous example:
 
 Decorators are a type of wrapper that allow for some very nice [*syntactic sugar*](https://en.wikipedia.org/wiki/Syntactic_sugar).
 
-We are going to accomplish the same results as in the last example in the [Wrappers](#Wrappers) section, but using the @ notation.
+We are going to accomplish the same results as in the last example in the [Wrappers](#wrappers) section, but using the @ notation.
 
 ```python
 def ez_wrapper(inner):
