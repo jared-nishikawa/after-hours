@@ -238,5 +238,16 @@ So it turns out that `*args` and `**kwargs` are special types of references that
 
 (It has nothing to do with [wargs](https://en.wikipedia.org/wiki/Warg), which is disappointing).
 
+Finally, let's see how we can reference an actual list and pass it as comma-separated arguments to a function:
+```python
+L = [1, 2, 3]
 
-**TODO**: cross-reference with wrappers and decorators
+print(L)
+# [1, 2, 3]
+
+# This is equivalent to print(1, 2, 3)
+print(*L)
+# 1 2 3
+```
+
+(See section [Wrappers](../wrappers) for more info).

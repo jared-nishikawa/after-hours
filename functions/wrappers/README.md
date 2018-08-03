@@ -1,12 +1,10 @@
-# Advanced
-
-See [Basics](../basics) to brush up on functions.
-
-## Wrappers
+# Wrappers
 
 The word *wrapper* is sort of an all-purpose word that describes the following process:
 
 Sometimes you want many functions to have *slightly* different operations but all have a similar template.  Write the unique operations into different **inner** functions, and write the template into an **outer** function which will *extend* the operation of the inner functions.
+
+## Intro
 
 Example
 ```python
@@ -52,6 +50,8 @@ Now, since `ez_wrapper` returns a function that is intended to be used as an all
 
 That means it is actually *very* convenient in this case to use `*args` and `**kwargs`.  (In fact, this is standard practice, which we will adopt for all the other wrappers we discuss on this page).
 
+(See section [Args and Kwargs](../basics#args-and-kwargs) for reference).
+
 ```python
 def better_wrapper(inner):
     def wrapper(*args, **kwargs):
@@ -66,7 +66,7 @@ secret = better_wrapper(secret)
 
 secret(42, 17)
 # This is the wrapped function
-# Secret: 42 17
+# My secret numbers are: 42 17
 ```
 
 A couple of notes about the previous example:
@@ -76,6 +76,36 @@ A couple of notes about the previous example:
 
 ## Closures
 
+Closures are a type of a wrapper.  They can be used to avoid global variables and implement callbacks.
+
+A [*callback*](https://en.wikipedia.org/wiki/Callback_(computer_programming) (or *call-after*) is a function you pass to *another* function to be called when that function is done executing.  This is particularly useful in asynchronous and/or network programming: you want to "register" a function to be called whenever a new network connection is made.
+
+I don't want to spend too much time talking about closures, because their use is nuanced and often gets subsumed by decorators anyway (next section).  Here is a minimal example though:
+
+```python
+def callback(cmd):
+    print("Registering callback:", cmd)
+    def inner():
+        print(cmd, "just got called")
+    return inner
+
+# Notice how the strings "ls", "mv", and "rm" do NOT have to be stored as global variables.
+# They are "hidden" (to some extent) behind the l, m, and r functions.
+l = callback("ls")
+m = callback("mv")
+r = callback("rm")
+
+l()
+m()
+r()
+
+# Registering callback: ls
+# Registering callback: mv
+# Registering callback: rm
+# ls just got called
+# mv just got called
+# rm just got called
+```
 
 ## Decorators
 
@@ -91,6 +121,8 @@ def ez_wrapper(inner):
         print("This code will always run after")
     return wrapper
 
+# This piece of code passes the function "secret" as an argument to ez_wrapper
+# The result is the wrapped function
 @ez_wrapper
 def secret():
     print("Here is where secret stuff will happen")
@@ -128,7 +160,7 @@ def shiny(arg):
 
 # This passes "/secret" as an argument to shiny
 # The return value from route should be a function
-# Whatever function is returned, the function secret is passed as an argument
+# Whatever function is returned, the function "secret" is passed as an argument
 # The result is the wrapped function
 @shiny("/secret")
 def secret():
@@ -150,5 +182,3 @@ public()
 # Public stuff!
 # This code will always run after
 ```
-
-## Class-specific
