@@ -48,7 +48,7 @@ def alerts():
     print(alerts)
 ```
 
-Ok... but hang on.  Someone once told me to try to avoid using global variables.  Maybe we should just pass in `prod` as a parameter to all these functions.
+Ok... but hang on.  Someone once told me to try to avoid using global variables.  Furthermore, what if I want to change `prod` later to something besides `"prod05"`?  Maybe we should just pass in `prod` as a parameter to all these functions.
 ```python
 def connect(prod):
     send_connection_request(prod)
@@ -119,7 +119,7 @@ It's important to keep in mind the distinction: a *class* is an abstract templat
 
 ## Methods
 
-Methods and functions are used more or less interchangeably, so I don't really know why the word "method" is ore common when talking about functions within classes.
+The words "method" and "function" are used more or less interchangeably, so I don't really know why the word "method" is more common when talking about functions within classes.
 
 ### Instance methods
 

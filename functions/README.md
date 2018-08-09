@@ -4,4 +4,4 @@
 
 ## [Wrappers](./wrappers)
 
-## [Functional Programming](./functional-programming)
+## [Miscellaneous](./misc)
