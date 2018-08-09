@@ -125,7 +125,7 @@ Methods and functions are used more or less interchangeably, so I don't really k
 
 An *instance method* is a function that can only be called when by an instance of the abstract class.
 
-You *must* always pass `self` as a parameter in an instance method.  The `self` parameter is actually the instance itself (yes, it passes itself to its own function).  Other programming languages do this implicitly (`this` in Java), but it is considered Pythonic to be explicity about it.
+You *must* always pass `self` as a parameter in an instance method.  The `self` parameter is actually the instance itself (yes, it passes itself to its own function).  Other programming languages do this implicitly (`this` in Java), but it is considered Pythonic to be explicit about it.
 
 ```python
 class Prod():

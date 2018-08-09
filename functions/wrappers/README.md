@@ -78,7 +78,7 @@ A couple of notes about the previous example:
 
 Closures are a type of a wrapper.  They can be used to avoid global variables and implement callbacks.
 
-A [*callback*](https://en.wikipedia.org/wiki/Callback_(computer_programming) (or *call-after*) is a function you pass to *another* function to be called when that function is done executing.  This is particularly useful in asynchronous and/or network programming: you want to "register" a function to be called whenever a new network connection is made.
+A [callback](https://en.wikipedia.org/wiki/Callback_(computer_programming) (or *call-after*) is a function you pass to *another* function to be called when that function is done executing.  This is particularly useful in asynchronous and/or network programming: you want to "register" a function to be called whenever a new network connection is made.
 
 I don't want to spend too much time talking about closures, because their use is nuanced and often gets subsumed by decorators anyway (next section).  Here is a minimal example though:
 

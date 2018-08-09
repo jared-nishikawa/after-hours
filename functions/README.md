@@ -2,4 +2,6 @@
 
 ## [Basics](./basics)
 
-## [Advanced](./advanced)
+## [Wrappers](./wrappers)
+
+## [Functional Programming](./functional-programming)
