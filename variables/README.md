@@ -154,4 +154,85 @@ if __name__ == '__main__':
 
 Again the problem is that python doesn't know whether `name` is local or global.  The important thing to point out here is that the `global` keyword in this case is redundant, as the scope of `name` already include the `if` block.  The `if` block is *not* a function, and therefore does not have a separate scope (like other functions).
 
+**Warning**: global variables often allow for quick-fixes... However, *most* of the time, it is probably better to avoid global variables.  If you think you have a problem on your hands which you think can only be solved with a global variable, consider if [classes](../classes) can help you at all.
+
 ## Nonlocal
+
+The `nonlocal` keyword is used for similar reasons as the `global` keyword.  If you want to alter a variable in the closest enclosing scope (furthermore, without affecting the global scope).
+
+**Disclaimer**: I have never personally used the `nonlocal` keyword.  I imagine there are probably cases where this is the best solution, but I have not yet found one.
+
+Because of the rarity of this keyword, let's see if we can get away with just an example:
+
+```python
+x = 1
+
+def outer():
+    x = 2
+    def inner():
+        x = 3
+        print("Inner:", x)
+    inner()
+    print("Outer:", x)
+
+outer()
+# Inner: 3
+# Outer: 2
+
+print("Global:", x)
+# Global: 1
+```
+
+As you can see, each assignment of `x` is only valid locally.
+
+Let's add `nonlocal` inside the `inner` function:
+
+```python
+x = 1
+
+def outer():
+    x = 2
+    def inner():
+        nonlocal x
+        x = 3
+        print("Inner:", x)
+    inner()
+    print("Outer:", x)
+
+outer()
+# Inner: 3
+# Outer: 3
+
+print("Global:", x)
+# Global: 1
+```
+
+This time, the `x` inside `inner` was declared to alter the value of `x` from `outer`  (confused yet?).
+
+Last adjustment, let's change `nonlocal` to `global` and see what happens.
+
+```python
+x = 1
+
+def outer():
+    x = 2
+    def inner():
+        global x
+        x = 3
+        print("Inner:", x)
+    inner()
+    print("Outer:", x)
+
+outer()
+# Inner: 3
+# Outer: 2
+
+print("Global:", x)
+# Global: 3
+```
+
+This time, the `inner` function changed the value of the global variable, but the `outer` function defined its own local variable.
+
+
+
+
