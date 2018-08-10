@@ -86,6 +86,8 @@ for num in mapped:
 # 9
 ```
 
+The key takeaway here is not about the utility of the `map` function, but rather the fact that functions (in this case, the `squared` function) can be used as parameters in *other* functions.  Far out!
+
 ## Lambdas
 
 We frequently need a one-liner function for a single use (as in the last example).
