@@ -331,7 +331,7 @@ print(short)
 # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ```
 
-We have built the `short` list from `L` using the statement `[x**2 for x in L]`.  The `for x in L` describes the iteration, and `x**` describes the elements that shall be placed in the new list.
+We have built the `short` list from `L` using the statement `[x**2 for x in L]`.  The `for x in L` describes the iteration, and `x**2` describes the elements that shall be placed in the new list.
 
 It is equivalent to:
 
@@ -362,8 +362,7 @@ The general form of a list comprehension is as follows:
 
 `[{element} {loop} {condition}]`
 
-Here are a few more examples to showcase the power and flexbility of list comprehensions:
-
+Here are a few more examples to showcase the power and flexibility of list comprehensions:
 
 ```python
 # Given a list of dictionaries, extract the value associated with the key "name" in each dictionary
