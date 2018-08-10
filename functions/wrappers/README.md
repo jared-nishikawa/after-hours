@@ -147,6 +147,8 @@ This also eliminates the need to call the wrapper function.
 
 ### Decorators with arguments
 
+This section needs some explanation.
+
 ```python
 
 def shiny(arg):
@@ -160,7 +162,7 @@ def shiny(arg):
     return smart_wrapper
 
 # This passes "/secret" as an argument to shiny
-# The return value from route should be a function
+# The return value from shiny should be a function
 # Whatever function is returned, the function "secret" is passed as an argument
 # The result is the wrapped function
 @shiny("/secret")

@@ -187,7 +187,7 @@ The `all` builtin will take an iterable object and return `True` if all of the e
 print(all([0, 0, 0, 1, 0]))
 # False
 
-print(any([1, 1, 1, 1, "a"))
+print(all([1, 1, 1, 1, "a"))
 # True
 ```
 
