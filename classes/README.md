@@ -171,5 +171,58 @@ p.display()
 
 ### Class methods
 
+### Attributes
+
+## Dummy classes trick
+
+There have been a few times in my life where I needed a class for a very singular purpose: it needed attributes.  For whatever reason, a dictionary would not cut it.
+
+Basically, I needed this:
+
+```python
+class Dummy():
+    def __init__(self):
+        self.attr1 = 42
+        self.attr2 = 17
+
+D = Dummy()
+print(D.attr1)
+# 42
+
+print(D.attr2)
+# 17
+```
+
+I remember spending sometime being annoyed that I needed to create an entire class for this, so I went poking around the internet and discovered a shortcut.  The key to this shortcut is the observation that you *can't* set arbitrary attributes for objects like ints, lists, or strings... but you *can* set arbitrary atrtibutes for *functions*.
+
+Observe:
+
+```python
+def func():
+    return 0
+
+func.attr = 42
+
+print(func.attr)
+# 42
+```
+
+This is slightly better, but still kind of annoying because of the verbose creation of the function.
+
+Once again, lambdas save the day!
+
+```python
+L = lambda: None
+L.attr1 = 42
+L.attr2 = 17
+print(L.attr1)
+# 42
+
+print(L.attr2)
+# 17
+```
+
+I have found this one-liner solution to be useful on more than one occasion (but less than ten), and I find it an amusing solution at that, so I thought it worth sharing.
+
 
 ## Inheritance
