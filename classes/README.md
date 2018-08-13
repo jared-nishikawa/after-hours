@@ -117,23 +117,40 @@ What this class does is establish a template.  Each *instance* of this template 
 
 It's important to keep in mind the distinction: a *class* is an abstract template, while an *instance* of the class is an object.
 
+### Attributes
+
+A class can have *attributes*, which are variables that are bound to that class.
+
+```python
+class Prod():
+    company_name = 'carbon black'
+
+P = Prod()
+print(P.company_name)
+# carbon black
+```
+
+You can access these attributes using the dot nomenclature `class.attribute`.
+
 ## Methods
 
 The words "method" and "function" are used more or less interchangeably, so I don't really know why the word "method" is more common when talking about functions within classes.
 
 ### Instance methods
 
-An *instance method* is a function that can only be called when by an instance of the abstract class.
+An *instance method* is a method that when called, must be provided an instance of a class.
 
-You *must* always pass `self` as a parameter in an instance method.  The `self` parameter is actually the instance itself (yes, it passes itself to its own function).  Other programming languages do this implicitly (`this` in Java), but it is considered Pythonic to be explicit about it.
+Because of this, you *must* always pass `self` as a parameter when defining a new instance method.  The `self` parameter is actually the instance itself (yes, it passes itself to its own function).  Other programming languages do this implicitly (`this` in Java), but it is considered Pythonic to be explicit about it.
+
+The instance method is called using the dot notation `instance.method` and you don't need to specify the instance of the class as the first argument.  It is assumed.
 
 ```python
 class Prod():
     def hello(self):
         print("Hello world")
 
-    def set_prod(self, prod):
-        self.prod = prod
+    def set_prod(self, prod_name):
+        self.prod = prod_name
 
 p = Prod()
 
@@ -148,7 +165,7 @@ print(p.prod)
 # prod02
 ```
 
-It is worth reflecting on this example and thinking about how `self` works as well as the period (".") nomenclature.
+When `self` is  passed to `set_prod`, we use it to set the `prod` attribute for this instance of the class.
 
 Finally, we should discuss the `__init__` instance method.  It is not required, but it is *always* called whenever a new instance is created.  (Let's forget for the time being how it could possibly be called if you haven't written it!)
 
@@ -167,11 +184,74 @@ p.display()
 # prod02
 ```
 
+The `__init__` method is called when a new instance of a class is created.  It's useful for *initializing* attributes of the instance or calling other functions that need to be called upon the creation of this new object.
+
 ### Static methods
+
+A *static method* is a method associated with a class that isn't associated with (or *bound to*) any particular instance of that class.  As such, it does not require the `self` parameter:
+
+```python
+class Prod():
+    def display(self):
+        print("This is an instance method.")
+        print("It requires the self parameter.")
+
+    @staticmethod
+    def hello():
+        print("This is a static method.")
+        print("It does NOT require the self parameter.")
+```
+
+Notice also that we used the `@staticmethod` decorator to wrap the `hello` method.  See [the section on decorators](../functions/wrappers#decorators) for more info.
+
+We can call `hello` without an instance of the `Prod` class:
+```python
+Prod.hello()
+# This is a static method.
+# It does NOT require the self parameter.
+```
+
+Static methods are useful when you have a function that should clearly be associated with or bundled with a particular class, but does not require a specific instance of that class in order to operate.
 
 ### Class methods
 
-### Attributes
+An *class method* is a method that when called, must be provided a class.
+
+Because of this, you *must* always pass `cls` as a parameter when defining a new class method.  The `cls` parameter is actually the class itself.
+
+The class method is called using the dot notation `class.method` and you don't need to specify the as the first argument.  It is assumed.
+
+Class methods are handy for when you want to change attributes across all instances of a class.
+
+```python
+class Prod():
+    company_name = "carbon black"
+
+    @classmethod
+    def change(cls, new_name):
+        cls.company_name = new_name
+
+A = Prod()
+B = Prod()
+
+print(A.company_name)
+# carbon black
+
+print(B.company_name)
+# carbon black
+
+Prod.change("acme")
+
+print(A.company_name)
+# acme
+
+print(B.company_name)
+# acme
+```
+
+Again, notice the use of [decorators](../functions/wrappers#decorators).
+
+Both `staticmethod` and `classmethod` are builtins to be used as decorators.
 
 ## Dummy classes trick
 
@@ -193,7 +273,7 @@ print(D.attr2)
 # 17
 ```
 
-I remember spending sometime being annoyed that I needed to create an entire class for this, so I went poking around the internet and discovered a shortcut.  The key to this shortcut is the observation that you *can't* set arbitrary attributes for objects like ints, lists, or strings... but you *can* set arbitrary atrtibutes for *functions*.
+I remember spending some time being annoyed that I needed to create an entire class for this, so I went poking around the internet and discovered a shortcut.  The key to this shortcut is the observation that you *can't* set arbitrary attributes for objects like ints, lists, or strings... but you *can* set arbitrary atrtibutes for *functions*.
 
 Observe:
 
@@ -226,3 +306,35 @@ I have found this one-liner solution to be useful on more than one occasion (but
 
 
 ## Inheritance
+
+We could spend all day talking about inheritance, but we won't.  In fact, we'll keep it to a minimum.
+
+This is where the conversations about classes start to become ridiculous, because the classes are made-up and don't make any sense, from the point of view of practical programming.
+
+```python
+class Animal():
+    limbs = 4
+
+class Lion(Animal):
+    nocturnal = False
+
+class Raccoon(Animal):
+    nocturnal = True
+
+L = Lion()
+print(L.limbs)
+# 4
+
+print(L.nocturnal)
+# False
+
+R = Raccoon()
+print(R.limbs)
+# 4
+
+print(R.nocturnal)
+# True
+```
+
+We have defined `Lion` and `Raccoon` to be *subclasses* of the `Animal` class.  Both subclasses *inherit* all the functions and attributes of the parent class.
+
