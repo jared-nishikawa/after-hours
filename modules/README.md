@@ -111,11 +111,15 @@ Now, open *another* text file (I'm calling this one `main.py`), and enter this:
 ```python
 # main.py
 import foo
-# Hello world!
-
 foo.hello()
 print(foo.life)
-# 42
+```
+
+Save, and run with `python main.py`.  You should see output like this:
+
+```python
+Hello world!
+42
 ```
 
 Awesome, right!?
