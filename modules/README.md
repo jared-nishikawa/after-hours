@@ -174,7 +174,7 @@ print(foo.life)
 
 Run this file with `python main.py`.  You should see output similar to this:
 
-```python
+```
 This is a test of the foo module.  I'd like to make sure it works
 Hello world!
 42
@@ -186,7 +186,10 @@ Hello world!
 
 What has happened is this: when we imported the foo module, it automatically ran everything inside the script.
 
-It would be great if we could have some sort of distinction between a script that has been called directly, and one that is being imported as a module.  To that end, we will add one line to `foo.py` (it should now look like this):
+It would be great if we could have some sort of distinction between a script that has been called directly, and one that is being imported as a module.  To that end, we will add one line to `foo.py`.
+
+### Example 2
+`foo.py` should look like this:
 
 ```python
 # foo.py
@@ -212,7 +215,7 @@ My name is: __main__
 
 But now... run `python main.py` again and the `__name__` variable will change:
 
-```python
+```
 This is a test of the foo module.  I'd like to make sure it works
 Hello world!
 42
@@ -225,7 +228,9 @@ Hello world!
 
 It turns out that when a script is called directly, the builtin `__name__` variable is set to `__main__` and when it is imported, `__name__` is set to the name of the module.
 
-Conclusion: if you want some code to only run when a script is called directly (and not when it is imported as a module), make sure that `__name__` is `__main__`:
+Conclusion: if you want some code to only run when a script is called directly (and not when it is imported as a module), check to see if `__name__` is `__main__`.
+
+### Example 3
 
 ```python
 # foo.py
