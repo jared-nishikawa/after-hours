@@ -369,7 +369,7 @@ Here are a few more examples to showcase the power and flexibility of list compr
 names = [dict["name"] for dict in dict_list]
 
 # Filter out all lines from a file starting with "#"
-good_lines = [line for line in file_obj if line.startswith("#")]
+good_lines = [line for line in file_obj if not line.startswith("#")]
 
 # Flatten a nested list
 nest = [[1,2,3], [4,5,6], [7,8,9]]
