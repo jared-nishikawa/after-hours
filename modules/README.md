@@ -117,7 +117,7 @@ print(foo.life)
 
 Save, and run with `python main.py`.  You should see output like this:
 
-```python
+```
 Hello world!
 42
 ```
