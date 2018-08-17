@@ -111,9 +111,11 @@ for num in mapped:
 # 9
 ```
 
-**TODO**: cross-reference with class attributes
+See: [builtins](../misc#builtins)
 
-**TODO**: cross-reference with list comprehensions
+See: [class attribute trick](../../classes#dummy-classes-trick)
+
+
 
 ## Named Arguments
 
