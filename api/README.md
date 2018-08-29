@@ -91,7 +91,7 @@ Then the server would respond with a JSON object:
 
 Here is an actual example (in 5 lines) of a script that interacts with an API.
 
-It contacts the NIST beacon service (this is a website that generates and broadcasts random data every minute).
+This little script contacts the NIST beacon service (this is a website that generates and broadcasts random data every minute).  See more about it here: https://www.nist.gov/programs-projects/nist-randomness-beacon.
 
 It uses the `requests` module which does not come with the standard library.  It needs to be installed with `pip install requests`.  I recommend doing this in a virtual environment.
 
