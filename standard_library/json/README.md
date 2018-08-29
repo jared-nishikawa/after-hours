@@ -31,7 +31,7 @@ with open('data.json') as f:
     loaded_data = json.load(f)
 ```
 
-Note: some markup languages interpret or record these nested dictionaries and lists in a conveniently presentable way.
+Unrelated sidenote: some markup languages interpret or record these nested dictionaries and lists in a conveniently presentable way.
 
 For example, the data above could be represented like this:
 ```yaml
@@ -44,3 +44,4 @@ entries:
 - description: The application GoogleUpdate.exe successfully established a TCP/443 connection to 172.16.163.67
   threatScore: 5
 ```
+This is nice for humans to look at, but serialized json is better for scripts/automation.
