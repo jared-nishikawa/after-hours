@@ -53,7 +53,7 @@ You would have to:
 
 *Problem 2*. The HTML may be ungainly to work with.  They might change their website.  The HTML parsers out there work, but  they're usually a hack (or you have to write a custom parser).
 
-*Problem 3*. Some website hosts don't like people writing scripts to scrape their webpages without permission.  They might just ban you.  Another problem is that they will try to ban you by IP address and then you could just change your IP address and scrape again...
+*Problem 3*. Some website hosts don't like people writing scripts to scrape their webpages without permission.  They might just ban you.  The problem with *that* is that they will try to ban you by IP address and then you could just change your IP address and scrape again...
 
 **Solution**
 
@@ -85,6 +85,7 @@ https://examplex.com/api/cities
 Then the server would respond with a JSON object:
 ```
 {"temp": 19, "humidity": 64, "pressure": 10.13, "wind": 6}
+```
 
 ## Example
 
