@@ -357,4 +357,3 @@ if a > bound:
 ```
 
 It is typical to make custom exceptions with a `pass` because mostly what you care about is the type of exception being thrown (in this case `ThresholdException`) so you can catch specific types of exceptions.
-    raise CustomException(
