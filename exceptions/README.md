@@ -47,7 +47,7 @@ In fact, we can specify different behavior based on what *type* of exception is 
 
 It will print out `That is not an integer!` which is not exactly what we want to have happen.
 
-What's happening under the hood is that exceptions are actually [classes](../classes), and the various types of exceptions that can be thrown are all subclasses of the very broad parent class `Exception`.
+What's happening under the hood is that exceptions are actually [classes](../classes), and the various types of exceptions that can be thrown are all [subclasses](../classes#inheritance) of the very broad parent class `Exception`.
 
 For example, the exception that is thrown when you try to cast an invalid string to an int is a `ValueError`.
 
