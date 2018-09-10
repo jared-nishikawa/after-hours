@@ -338,3 +338,23 @@ print(R.nocturnal)
 
 We have defined `Lion` and `Raccoon` to be *subclasses* of the `Animal` class.  Both subclasses *inherit* all the functions and attributes of the parent class.
 
+## Exceptions
+
+As we mentioned in [exceptions](../exceptions), `Exception` is a class, and exceptions like `ValueError` and `KeyboardInterrupt` are subclasses of that class.
+
+That means you can make your own exceptions!
+
+You just have to make sure you subclass the `Exception` class (using inheritance!).
+
+```python
+class ThresholdException(Exception):
+    pass
+
+bound = 500
+a = 723
+if a > bound:
+    raise ThresholdException("Number too big!")
+```
+
+It is typical to make custom exceptions with a `pass` because mostly what you care about is the type of exception being thrown (in this case `ThresholdException`) so you can catch specific types of exceptions.
+    raise CustomException(

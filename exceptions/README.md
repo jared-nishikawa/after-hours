@@ -28,18 +28,49 @@ It's sort of like an `if-then` clause for catching errors.
 Observe:
 
 ```python
-num = input("Enter your age: ")
 
 # Isolate the code that could throw the error
 try:
+    num = input("Enter your age: ")
     age = int(num)
 
 # Specify the logic for if an error is thrown
-except ValueError:
+except:
     print("That is not an integer!")
     exit()
 
 print("You are", age, "years old.")
 ```
 
+
+In fact, we can specify different behavior based on what *type* of exception is thrown.  For example, try running this code, and when it asks for your age, hit CTRL-C.
+
+It will print out `That is not an integer!` which is not exactly what we want to have happen.
+
+What's happening under the hood is that exceptions are actually [classes](../classes), and the various types of exceptions that can be thrown are all subclasses of the very broad parent class `Exception`.
+
+For example, the exception that is thrown when you try to cast an invalid string to an int is a `ValueError`.
+
+And when you hit CTRL-C you are throwing a `KeyboardInterrupt`.
+
+We can write code that will handle both types of exceptions separately:
+
+```python
+
+try:
+    num = input("Enter your age: ")
+    age = int(num)
+
+except ValueError:
+    print("That is not an integer!")
+    exit()
+
+except KeyboardInterrupt:
+    print("User hit CTRL-C.  Goodbye")
+    exit()
+
+print("You are", age, "years old.")
+```
+
+For more on exceptions, see also [flow](../flow).
 
