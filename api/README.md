@@ -112,3 +112,11 @@ One final word, because we still haven't really addressed all of the problems.
 An API allows for authentication.  The API host can issue tokens to users who *must* present those tokens along with any API request in order to use the service.  This way the host can track API users and rate-limit if necessary (or ban) by token rather than IP address.
 
 The NIST beacon does not require a token, but many APIs do, which is why you usually need to sign up for the service and request an API token before you can start using the API.
+
+# Public APIs
+
+Most popular services provide an API to access their services (facebook, twitter, linkedin, reddit...).
+
+Here are a couple beginner-friendly APIs:
+- https://developer.marvel.com/ (sign-up required)
+- https://ghibliapi.herokuapp.com/ (no sign-up required)
