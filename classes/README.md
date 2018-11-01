@@ -134,7 +134,7 @@ You can access these attributes using the dot nomenclature `class.attribute`.
 
 ## Methods
 
-The words "method" and "function" are used more or less interchangeably, so I don't really know why the word "method" is more common when talking about functions within classes.
+A "method" is a function that is *bound* to a class (or instance of that class).
 
 ### Instance methods
 
