@@ -1,10 +1,3 @@
-# Bytes and Strings
-
-A confusing subject.
-
-```python
-
-
 #!/usr/bin/python3
 
 """
@@ -61,4 +54,3 @@ z = "\xff"
 # bytes(list(map(ord,z)))
 # b'\xff'
 
-```
