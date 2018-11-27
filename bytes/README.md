@@ -2,6 +2,10 @@
 
 A confusing subject.
 
+The basics:
+- `bytearray` is mutable
+` bytes` is immutable
+
 ```python
 >>> v = [0, 32, 64, 96, 128, 160, 192, 224]
 >>> type(v)
