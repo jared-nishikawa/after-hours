@@ -7,6 +7,22 @@ The basics:
 ` bytes` is immutable
 
 ```python
+>>> b = b"abcdef"
+>>> b[0] = 99
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'bytes' object does not support item assignment
+>>> c = bytearray(b"abcdef")
+>>> c
+bytearray(b'abcdef')
+>>> c[0]
+97
+>>> c[0] = 99
+>>> c
+bytearray(b'cbcdef')
+```
+
+```python
 >>> v = [0, 32, 64, 96, 128, 160, 192, 224]
 >>> type(v)
 #<class 'list'>
