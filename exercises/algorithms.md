@@ -188,12 +188,12 @@ TODO: NEED GRAPH
 
 Here's a proposal for how to find the length of the shortest cycle in an undirected graph with unit edge lengths:
 
----
+>>>
 When a back edge, say $`(v,w)`$, is encountered during a depth-first search, it forms a cycle with the tree edges from $`w`$ to $`v`$.  The length of the cycle is level$`[v]`$ - level$`[w]`$ + 1, where the level of a vertex is its distance in the DFS tree from the root vertex. This suggests the following algorithm:
 
 - *Do a depth-first search, keeping track of the level of each vertex.*
 - *Each time a back edge is encountered, compute the cycle length and save it if it is smaller than the shortest one previously seen.*
----
+>>>
 
 Show that this strategy does not always work by providing a counterexample as well as a brief (one or two sentence) explanation.
 
@@ -213,17 +213,17 @@ Give an algorithm that takes as input a directed graph with positive edge length
 
 ### Problem 6
 
-In cases where there are several different shortest paths between two nodes (and edges have varying lengths), the most convenient of these paths is often \textit{the one with fewest edges}.  For a specific starting node $`s`$, define
+In cases where there are several different shortest paths between two nodes (and edges have varying lengths), the most convenient of these paths is often *the one with fewest edges*.  For a specific starting node $`s`$, define
 
 ```math
-\verb"best"[u] = \text{minimum number of edges in a shortest path from $`s`$ to $`u`$}
+\verb"best"[u] = \text{minimum number of edges in a shortest path from $s$ to $u$}
 ```
 
 Give an efficient algorithm for the following problem.
 
 - *Input:* Graph $`G = (V,E)`$; positive edge lengths $`l_e`$; starting node $`s\in V`$.
 
-- *Output:* The values of best$`[u]`$ should be set for \textit{all} nodes $`u\in V`$.
+- *Output:* The values of best$`[u]`$ should be set for *all* nodes $`u\in V`$.
 
 ### Problem 7
 
