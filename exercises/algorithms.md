@@ -132,7 +132,7 @@ The text doesn't implement their algorithm for Selection.  Please do so.  Then, 
 
 Run the DFS-based topological ordering algorithm on the following graph.  Whenever you have a choice of vertices to explore, always pick the one that is alphabetically first.
 
-TODO: NEED GRAPH
+![](dfs.png)
 
 - Indicate the pre and post numbers of the nodes.
 - What are the sources and sinks of the graph?
@@ -179,7 +179,7 @@ A *chain of words* is a list of words where the i-th word is the (i-1)st word wi
 
 Suppose Dijkstra's algorithm is run on the following graph, starting at node $`A`$.
 
-TODO: NEED GRAPH
+![](djikstra.png)
 
 - Draw a table showing the intermediate distance values of all the nodes at each iteration of the algorithm.
 - Show the final shortest-path tree
