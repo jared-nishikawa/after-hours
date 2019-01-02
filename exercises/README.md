@@ -1,5 +1,8 @@
-All the problems from my intro programming class (originally for Java, but the problems can be done in Python):
+Most of the problems from my intro programming class (originally for Java, but the problems can be done in Python):
 - [Intro](intro.md)
+
+Most of the problems from my data structures class (originally for Java, but the problems can be done in Python):
+- [Data Structures](data_structures.md)
 
 Some other ideas
 
