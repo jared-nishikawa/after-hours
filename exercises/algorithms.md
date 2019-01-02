@@ -43,11 +43,11 @@ def find(a, target):
     return -1
 ```
 
-Suppose list $`a`$ has $`n`$ elements and is sorted.  Using $`\Theta()`$ notation, what is the best case running time as a funcction of $`n`$?  Using $`Theta()`$ notation, what is the worst case running time as a function of $`n`$?
+Suppose list $`a`$ has $`n`$ elements and is sorted.  Using $`\Theta()`$ notation, what is the best case running time as a function of $`n`$?  Using $`\Theta()`$ notation, what is the worst case running time as a function of $`n`$?
 
 ### Problem 4
 
-Modify the fund function from problem 4 by changing the 5th line from $`m=(x+y)/2`$ to $`m=(2*x+y)/3`$.  Now answer the same questions given in problem 3.
+Modify the find function from problem 3 by changing the 5th line from $`m=(x+y)/2`$ to $`m=(2*x+y)/3`$.  Now answer the same questions given in problem 3.
 
 ### Problem 5
 
