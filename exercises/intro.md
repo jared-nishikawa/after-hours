@@ -11,7 +11,7 @@ Spring 2009
 ### Problem 1
 User inputs a month, a day, and a year.
 
-This program will print "true" if that is a valid dat, and "false" if not.
+This program will print "true" if that is a valid date, and "false" if not.
 
 Also, it will print whether or not the date falls on a weekend.
 
@@ -70,6 +70,12 @@ Reading:
 ### Problem 1
 
 Given an integer between 0 and 1,000,000,000, this program prints that integer in English, with appropriate formatting (caps, hyphens, and commas).
+
+Example:
+```
+Integer: 1234567
+One million, two hundred and thirty-four thousand, five hundred and sixty-seven
+```
 
 ### Problem 2
 
