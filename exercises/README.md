@@ -1,4 +1,7 @@
-Some ideas
+All the problems from my intro programming class (originally for Java, but the problems can be done in Python):
+- [Intro](intro.md)
+
+Some other ideas
 
 - https://wiki.python.org/moin/ProblemSets
 - https://www.hackerrank.com/
