@@ -7,7 +7,7 @@ Most of the problems from my data structures class (originally for Java, but the
 Most of the problems from my algorithms class:
 - [Algorithms](algorithms.md)
 
-Some other ideas
+Some other resources for programming problems:
 
 - https://wiki.python.org/moin/ProblemSets
 - https://www.hackerrank.com/
