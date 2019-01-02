@@ -96,8 +96,8 @@ def luckysort(a):
 
 Suppose you are choosing between the following three algorithms:
 - Algorithm $`A`$ solves each problem by dividing them into five subproblems of half the size, recursively solving each subproblem, and then combining the solutions in linear time.
-- Algorithm $`B`$ solves problems of size $`n`$ by recursively solving two problems of size $n-1$, and then combining the solutions in constant time.
-- Algorithm $`A`$ solves problems of size $n$ by dividing them into nine subproblems of size $`n/3`$, recursively solving each subproblem, and then combining the solutions in $`O(n^2)`$ time.
+- Algorithm $`B`$ solves problems of size $`n`$ by recursively solving two problems of size $`n-1`$, and then combining the solutions in constant time.
+- Algorithm $`A`$ solves problems of size $`n`$ by dividing them into nine subproblems of size $`n/3`$, recursively solving each subproblem, and then combining the solutions in $`O(n^2)`$ time.
 
 
 What are the running times of each of these algorithms in (in big-$`O`$ notation), and which would you choose?
@@ -109,7 +109,7 @@ How many lines, as a function of $`n`$ (in $`\Theta(\cdot)`$ form), does the fol
 ```
 function f(n)
     if n > 1:
-        print_line(``still going'')
+        print_line("still going")
         f(n/2)
         f(n/2)
 ```
@@ -131,6 +131,8 @@ The text doesn't implement their algorithm for Selection.  Please do so.  Then, 
 ### Problem 1
 
 Run the DFS-based topological ordering algorithm on the following graph.  Whenever you have a choice of vertices to explore, always pick the one that is alphabetically first.
+
+TODO: NEED GRAPH
 
 - Indicate the pre and post numbers of the nodes.
 - What are the sources and sinks of the graph?
@@ -170,7 +172,69 @@ Justify the correctness and running time of your algorithm. (Note that it says d
 
 A *chain of words* is a list of words where the i-th word is the (i-1)st word with one extra character and some mixing of letters. For example, AN, TAN, RANT, TRAIN, RETINA, NASTIER is a chain of length 6.  Find the longest chain you can in our wordlist [wordlst.txt](wordlst.txt).
 
+## Assignment 3
+
+### Problem 1
 
 
+Suppose Dijkstra's algorithm is run on the following graph, starting at node $`A`$.
+
+TODO: NEED GRAPH
+
+- Draw a table showing the intermediate distance values of all the nodes at each iteration of the algorithm.
+- Show the final shortest-path tree
+
+### Problem 2
+
+Here's a proposal for how to find the length of the shortest cycle in an undirected graph with unit edge lengths:
+
+---
+When a back edge, say $`(v,w)`$, is encountered during a depth-first search, it forms a cycle with the tree edges from $`w`$ to $`v`$.  The length of the cycle is level$`[v]`$ - level$`[w]`$ + 1, where the level of a vertex is its distance in the DFS tree from the root vertex. This suggests the following algorithm:
+
+- *Do a depth-first search, keeping track of the level of each vertex.*
+- *Each time a back edge is encountered, compute the cycle length and save it if it is smaller than the shortest one previously seen.*
+---
+
+Show that this strategy does not always work by providing a counterexample as well as a brief (one or two sentence) explanation.
+
+### Problem 3
+
+Professor F. Lake suggests the following algorithm for finding the shortest path from node $`s`$ to node $`t`$ in a directed graph with some negative edges: add a large constant to each edge weight so that all the weights become positive, then run Dijkstra's algorithm starting at node $`s`$, and return the shortest path found to node $`t`$.
+
+Is this a valid method?  Either prove that it works correctly, or give a counterexample.
+
+### Problem 4
+
+Consider a directed graph in which the only negative edges are those that leave $`s`$; all other edges are positive.  Can Dijkstra's algorithm, started at $`s`$, fail on such a graph?  Prove your answer.  (Assume that the graph has no negative-weight cycles).
+
+### Problem 5
+
+Give an algorithm that takes as input a directed graph with positive edge lengths, and returns the length of the shortest cycle in the graph (if the graph is acyclic, it should say so).  Your algorithm should take time at most $`O(|V|^3)`$.
+
+### Problem 6
+
+In cases where there are several different shortest paths between two nodes (and edges have varying lengths), the most convenient of these paths is often \textit{the one with fewest edges}.  For a specific starting node $`s`$, define
+
+```math
+\verb"best"[u] = \text{minimum number of edges in a shortest path from $`s`$ to $`u`$}
+```
+
+Give an efficient algorithm for the following problem.
+
+- *Input:* Graph $`G = (V,E)`$; positive edge lengths $`l_e`$; starting node $`s\in V`$.
+
+- *Output:* The values of best$`[u]`$ should be set for \textit{all} nodes $`u\in V`$.
+
+### Problem 7
+
+*Generalized shortest-paths problem*.  Suppose that in addition to having edge lengths $`\{l_e : e \in E\}`$, a graph also has *vertex costs* $`\{c_v : v \in V\}`$.  Now define the cost of a path to be the sum of its edge lengths, *plus* the costs of all vertices on the path (including the endpoints).  Give an efficient algorithm for the following problem.
+
+- *Input:* A directed graph $`G = (V,E)`$; positive edge lengths $`l_e`$ and positive vertex costs $`c_v`$; a starting vertex $`s\in V`$.
+
+- *Output:* An array cost$`[\cdot]`$ such that for every vertex $`p`$, cost$`[u]`$ is the least cost of any path from $`s`$ to $`u`$ (i.e., the cost of the cheapest path), under the definition above.
+
+### Problem 8
+
+Consider the digraph given by this graph [soc-Slashdot0811.txt](soc-Slashdot0811.txt) where each line of the file indicates an edge. There are 77,360 nodes and 905,468 directed edges. What is the number of nodes in the largest strongly connected component? What is the number of edges in the largest strongly connected component? Include your code with your answer.
 
 
