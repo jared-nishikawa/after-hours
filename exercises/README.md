@@ -4,6 +4,9 @@ Most of the problems from my intro programming class (originally for Java, but t
 Most of the problems from my data structures class (originally for Java, but the problems can be done in Python):
 - [Data Structures](data_structures.md)
 
+Most of the problems from my algorithms class:
+- [Algorithms](algorithms.md)
+
 Some other ideas
 
 - https://wiki.python.org/moin/ProblemSets
