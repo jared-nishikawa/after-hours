@@ -1,5 +1,5 @@
 ```
-$ python3 btree.py 
+$ python3 tree.py 
                               50
                               /\
                              /  \

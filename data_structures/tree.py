@@ -84,13 +84,14 @@ class Node:
             print_tree(r, o_layer)
 
 
-random.seed(0)
-
-root = Node(50)
-for _ in range(9):
-    val = random.randint(0,99)
-    root.push(val)
-
-root.display()
-
-print(root.sort())
+if __name__ == '__main__':
+    random.seed(0)
+    
+    root = Node(50)
+    for _ in range(9):
+        val = random.randint(0,99)
+        root.push(val)
+    
+    root.display()
+    
+    print(root.sort())
