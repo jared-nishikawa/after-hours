@@ -4,7 +4,7 @@ A confusing subject.
 
 The basics:
 - `bytearray` is mutable
-` bytes` is immutable
+- ` bytes` is immutable
 
 ```python
 >>> b = b"abcdef"
