@@ -9,9 +9,9 @@ Most of the problems from my algorithms class:
 
 Some other resources for programming problems:
 
-- https://wiki.python.org/moin/ProblemSets
-- https://www.hackerrank.com/
-- https://github.com/zhiwehu/Python-programming-exercises
-- https://www.reddit.com/r/learnprogramming/comments/5llmml/interesting_python_practice_problems_from_the/
-- https://projecteuler.net/
+- https://wiki.python.org/moin/ProblemSets (A list of other collections of problems).
+- https://www.reddit.com/r/learnprogramming/comments/5llmml/interesting_python_practice_problems_from_the/ (Another list of other collections of problems).
+- https://www.hackerrank.com/ (Open-ended problems designed to introduce you to new ideas and new libraries).
+- https://github.com/zhiwehu/Python-programming-exercises (Code challenges geared at sharpening your basic programming chops).
+- https://projecteuler.net/ (Very difficult math/programming problems).
 
