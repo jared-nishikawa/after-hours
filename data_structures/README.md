@@ -1,3 +1,15 @@
+# Data Structures
+
+Some data structures worth knowing about:
+- Stack
+- Queue
+- Binary Tree
+- Linked List
+- Hash Table
+- Heap
+- Priority Queue
+
+
 ```
 $ python3 tree.py 
                               50
