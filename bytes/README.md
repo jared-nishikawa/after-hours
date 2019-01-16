@@ -3,8 +3,8 @@
 A confusing subject.
 
 The basics:
-- `bytearray` is mutable
-- ` bytes` is immutable
+- `bytearray` is mutable (like a list)
+- ` bytes` is immutable (like a string)
 
 ```python
 >>> b = b"abcdef"
