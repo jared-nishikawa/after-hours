@@ -120,3 +120,5 @@ Most popular services provide an API to access their services (facebook, twitter
 Here are a couple beginner-friendly APIs:
 - https://developer.marvel.com/ (sign-up required)
 - https://ghibliapi.herokuapp.com/ (no sign-up required)
+- https://developers.google.com/maps/documentation/
+- https://developers.google.com/youtube/v3/getting-started
