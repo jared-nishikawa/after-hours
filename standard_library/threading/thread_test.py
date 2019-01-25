@@ -2,7 +2,7 @@ import threading
 import time
 
 def powers(p):
-    for x in range(10):
+    for x in range(5):
         print(threading.current_thread().name, ": ", p**x, sep='')
         time.sleep(1)
 
