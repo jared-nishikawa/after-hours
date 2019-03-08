@@ -74,40 +74,6 @@ A couple of notes about the previous example:
   - I reassigned `secret` to a wrapped version of itself.  The old `secret` function cannot be recovered afterward.  (And maybe that's a good thing).
 
 
-## Closures
-
-Closures are a type of a wrapper.  They can be used to avoid global variables and implement callbacks.
-
-A [callback](https://en.wikipedia.org/wiki/Callback_(computer_programming)) (or *call-after*) is a function you pass to *another* function to be called when that function is done executing.  This is particularly useful in asynchronous and/or network programming: you want to "register" a function to be called whenever a new network connection is made.
-
-I don't want to spend too much time talking about closures, because their use is nuanced and often gets subsumed by decorators anyway (next section).  Here is a minimal example though:
-
-```python
-def callback(cmd):
-    print("Registering callback:", cmd)
-    def inner():
-        print(cmd, "just got called")
-    return inner
-
-# Notice how the strings "ls", "mv", and "rm" do NOT have to be stored as global variables.
-# They are "hidden" (to some extent) behind the l, m, and r functions.
-l = callback("ls")
-m = callback("mv")
-r = callback("rm")
-
-# Registering callback: ls
-# Registering callback: mv
-# Registering callback: rm
-
-l()
-m()
-r()
-
-# ls just got called
-# mv just got called
-# rm just got called
-```
-
 ## Decorators
 
 Decorators are a type of wrapper that allow for some very nice [*syntactic sugar*](https://en.wikipedia.org/wiki/Syntactic_sugar).
