@@ -48,3 +48,7 @@ Implement a 2-4 Tree.
 
 Reading: https://en.wikipedia.org/wiki/2%E2%80%933%E2%80%934_tree
 
+Alternate (probably better) assignment: Implement a Red-Black Tree.
+
+Reading: https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
+
