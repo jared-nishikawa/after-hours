@@ -8,7 +8,7 @@ Fall 2009
 
 ## Assignment 0
 
-Create a "Vector" class.  Add a dot product method.
+Create a "Vector" class.  Implement methods for addition and dot product.
 
 ## Assignment 1
 
