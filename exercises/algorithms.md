@@ -10,6 +10,14 @@ Book: *Algorithms* by Dasgupta, Papadimitriou, and Vazirani
 
 https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402
 
+## Assignment 0
+
+Implement quick sort.
+
+Reading: https://en.wikipedia.org/wiki/Quicksort
+
+(not in original syllabus)
+
 ## Assignment 1
 
 ### Problem 1

@@ -6,21 +6,15 @@ CS 241
 
 Fall 2009
 
-## Assignment 0
-
-Create a "Vector" class.  Implement methods for addition and dot product.
-
 ## Assignment 1
+
+Create a "Vector" class.  Implement methods for addition and dot product. (not in original syllabus).
+
+## Assignment 2
 
 Create a class for doing complex arithmetic.  The class should have attributes for the storing a complex number's real and imaginary values.
 
 Reading: https://en.wikipedia.org/wiki/Complex_numbers
-
-## Assignment 2
-
-Implement quick sort.
-
-Reading: https://en.wikipedia.org/wiki/Quicksort
 
 ## Assignment 3
 
